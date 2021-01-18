@@ -1,0 +1,36 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello World</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'style/main.css' %}">
+    </head>
+    <body>
+
+        <nav id="sidebar">
+            <div class="toggle-btn" onclick="togglenav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+                <ul>
+                    <li><a href="#">Academic Affairs</a></li>
+                    <li><a href="#">My E-Services</a></li>
+                    <li><a href="#">My staff</a></li>
+                    <li><a href="#">Reports</a></li>
+                </ul>
+            
+        </nav>
+        {% block content %}
+
+        {% endblock %}
+        <footer>
+
+
+        </footer>
+
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>

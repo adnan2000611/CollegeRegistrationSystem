@@ -1,0 +1,55 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>K-tech | Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'style/main.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a14bd0e08d.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <img class="wave" src="{% static 'images/wave.png' %}">
+        <div class="container">
+            <div class="img">
+                <img src="{% static 'images/person.svg' %}"> 
+            </div>
+            <div class="login-container">
+                <form action="home" method="POST">
+                    {% csrf_token %}
+                    <img class="avatar" src="{% static 'images/Logo-avatar.jpg' %}">
+                    <h2>Welcome</h2>
+                    <div class="input-div one ">
+                        <div class="i">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h5>Student ID</h5>
+                            <input class="input" type="text" name="StudentID">
+                        </div>
+                    </div>
+                    <div class="input-div two">
+                        <div class="i">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div>
+                            <h5>Password</h5>
+                            <input class="input" type="Password" name="Password">
+                        </div>
+                    </div> 
+                    
+                    <a href="#">Forgot Password?</a>
+                    {% if messages %}
+                    {% for msg in messages %}
+                    <span style="color: red;">{{msg}}</span>
+                    {% endfor %}
+                    {% endif %}
+                    <input type="submit" class="btn" value="Login">
+                </form>
+            </div>
+        </div>
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>
